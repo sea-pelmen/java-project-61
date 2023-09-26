@@ -3,4 +3,4 @@
 
 <a href="https://codeclimate.com/github/sea-pelmen/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/603fabff6ad02dd98a78/maintainability" /></a>
 
-EvenGame record https://asciinema.org/a/cZBpf2Tx0HbUrfBj6icCYo9mR
+[![asciicast](https://asciinema.org/a/cZBpf2Tx0HbUrfBj6icCYo9mR.svg)](https://asciinema.org/a/cZBpf2Tx0HbUrfBj6icCYo9mR)
