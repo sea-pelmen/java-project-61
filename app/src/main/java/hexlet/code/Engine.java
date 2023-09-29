@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void gamesLogic(String gameRules, int[] questions, String[] answers){
+    public static void gamesLogic(String gameRules, String[] questions, String[] answers) {
         String userName = Cli.greeting();
         System.out.println(gameRules);
 
@@ -26,6 +26,7 @@ public class Engine {
             if (correctUsersAnswers == 2) {
                 System.out.println("Congratulations, " + userName + "!");
             }
-        } scanner.close();
+        }
+        scanner.close();
     }
 }

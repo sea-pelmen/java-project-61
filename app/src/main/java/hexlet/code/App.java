@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.EvenGame;
+import hexlet.code.games.CalcGame;
 
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class App {
         switch (usersChoice) {
             case 1 -> Cli.greeting();
             case 2 -> EvenGame.even();
-
+            case 3 -> CalcGame.calc();
             case 0 -> System.out.println("Bye!");
             default -> System.out.println("Invalid game number. Please restart the app.");
         }
