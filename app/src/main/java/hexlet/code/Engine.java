@@ -2,33 +2,30 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public class Games {
-    public static void even() {
-
+public class Engine {
+    public static void gamesLogic(String gameRules, int[] questions, String[] answers){
         String userName = Cli.greeting();
+        System.out.println(gameRules);
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int evenGameNumber = (int) (Math.random() * 100);
-            System.out.println("Question: " + evenGameNumber);
+            System.out.println("Question: " + questions[correctUsersAnswers]);
             System.out.print("Your answer: ");
 
-            var usersEvenGameAnswer = scanner.next();
-            String correctAnswer = (evenGameNumber % 2 == 0) ? "yes" : "no";
-            if (correctAnswer.equals(usersEvenGameAnswer)) {
+            var usersAnswer = scanner.next();
+            if (answers[correctUsersAnswers].equals(usersAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + usersEvenGameAnswer
+                System.out.println("'" + usersAnswer
                         + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "'.");
+                        + answers[correctUsersAnswers] + "'.");
                 System.out.println("Let's try again, " + userName);
                 break;
             }
             if (correctUsersAnswers == 2) {
                 System.out.println("Congratulations, " + userName + "!");
             }
-        }
+        } scanner.close();
     }
 }
