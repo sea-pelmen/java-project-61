@@ -30,12 +30,9 @@ public class CalcGame {
                     correctAnswer = calcGameNumber1 * calcGameNumber2;
                     break;
             }
-
             questions[correctUsersAnswers] = calcGameExpression;
             answers[correctUsersAnswers] = String.valueOf(correctAnswer);
         }
-
         Engine.gamesLogic(gameRules, questions, answers);
-
     }
 }
