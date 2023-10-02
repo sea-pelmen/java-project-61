@@ -30,7 +30,7 @@ public class ProgressionGame {
                     String.valueOf(Integer.parseInt(progressionNumbers[randomQuestionIndex + 1]) - randomD);
             progressionNumbers[randomQuestionIndex] = "..";
             String progressionQuestion = Arrays.toString(progressionNumbers);
-            progressionQuestion = progressionQuestion.replace("[", "").replace("]", "");
+            progressionQuestion = progressionQuestion.replace("[", "").replace("]", "").replace(",", "");
             questions[correctUsersAnswers] = progressionQuestion;
             answers[correctUsersAnswers] = correctAnswer;
         }
