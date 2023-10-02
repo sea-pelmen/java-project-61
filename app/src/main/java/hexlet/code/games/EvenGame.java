@@ -5,7 +5,6 @@ import hexlet.code.Engine;
 public class EvenGame {
     public static void even() {
         String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
         String[] questions = new String[3];
         String[] answers = new String[3];
 
@@ -17,6 +16,5 @@ public class EvenGame {
         }
 
         Engine.gamesLogic(gameRules, questions, answers);
-
     }
 }
