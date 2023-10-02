@@ -6,12 +6,15 @@ public class GCDGame {
     public static void gcd() {
         String gameRules = "Find the greatest common divisor of given numbers.";
 
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        int questionCount = 3;
+        int numberMax = 100;
+
+        String[] questions = new String[questionCount];
+        String[] answers = new String[questionCount];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int gcdNumber1 = (int) (Math.random() * 100);
-            int gcdNumber2 = (int) (Math.random() * 100);
+            int gcdNumber1 = (int) (Math.random() * numberMax);
+            int gcdNumber2 = (int) (Math.random() * numberMax);
             String gcdGameNumbers = gcdNumber1 + " " + gcdNumber2;
 
             int gcdMax = 0;

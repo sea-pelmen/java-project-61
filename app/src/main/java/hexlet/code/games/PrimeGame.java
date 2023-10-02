@@ -6,14 +6,17 @@ public class PrimeGame {
     public static void prime() {
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        int questionCount = 3;
+        int numberMax = 100;
+
+        String[] questions = new String[questionCount];
+        String[] answers = new String[questionCount];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int primeGameNumber = (int) (Math.random() * 100);
+            int primeGameNumber = (int) (Math.random() * numberMax);
 
             while (primeGameNumber < 1) {
-                primeGameNumber = (int) (Math.random() * 100);
+                primeGameNumber = (int) (Math.random() * numberMax);
             }
 
             String correctAnswer = null;

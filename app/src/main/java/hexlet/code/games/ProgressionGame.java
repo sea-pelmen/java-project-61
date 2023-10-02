@@ -8,8 +8,11 @@ public class ProgressionGame {
     public static void progression() {
         String gameRules = "What number is missing in the progression?";
 
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        int questionCount = 3;
+        int numberMax = 100;
+
+        String[] questions = new String[questionCount];
+        String[] answers = new String[questionCount];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             int min = 5;
@@ -18,9 +21,9 @@ public class ProgressionGame {
             String[] progressionNumbers = new String[randomNum];
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
 
-            progressionNumbers[0] = String.valueOf((int) (Math.random() * 100));
+            progressionNumbers[0] = String.valueOf((int) (Math.random() * numberMax));
 
-            int randomD = (int) (Math.random() * 100);
+            int randomD = (int) (Math.random() * numberMax);
 
             for (int i = 1; i < progressionNumbers.length; i++) {
                 progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));
