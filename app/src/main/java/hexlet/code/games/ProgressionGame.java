@@ -5,14 +5,13 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class ProgressionGame {
+    static final int QUESTION_COUNT = 3;
+    static final int NUMBER_MAX = 100;
     public static void progression() {
         String gameRules = "What number is missing in the progression?";
 
-        int questionCount = 3;
-        int numberMax = 100;
-
-        String[] questions = new String[questionCount];
-        String[] answers = new String[questionCount];
+        String[] questions = new String[QUESTION_COUNT];
+        String[] answers = new String[QUESTION_COUNT];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             int min = 5;
@@ -21,9 +20,9 @@ public class ProgressionGame {
             String[] progressionNumbers = new String[randomNum];
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
 
-            progressionNumbers[0] = String.valueOf((int) (Math.random() * numberMax));
+            progressionNumbers[0] = String.valueOf((int) (Math.random() * NUMBER_MAX));
 
-            int randomD = (int) (Math.random() * numberMax);
+            int randomD = (int) (Math.random() * NUMBER_MAX);
 
             for (int i = 1; i < progressionNumbers.length; i++) {
                 progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));

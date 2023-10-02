@@ -9,6 +9,13 @@ import hexlet.code.games.ProgressionGame;
 import java.util.Scanner;
 
 public class App {
+    static final int GREETING_NUMBER = 1;
+    static final int EVEN_GAME_NUMBER = 2;
+    static final int CALC_GAME_NUMBER = 3;
+    static final int GCD_GAME_NUMBER = 4;
+    static final int PROGRESSION_GAME_NUMBER = 5;
+    static final int PRIME_GAME_NUMBER = 6;
+    static final int EXIT_NUMBER = 0;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -25,13 +32,13 @@ public class App {
         var usersChoice = Integer.parseInt(scanner.next());
 
         switch (usersChoice) {
-            case 1 -> Cli.greeting();
-            case 2 -> EvenGame.even();
-            case 3 -> CalcGame.calc();
-            case 4 -> GCDGame.gcd();
-            case 5 -> ProgressionGame.progression();
-            case 6 -> PrimeGame.prime();
-            case 0 -> System.out.println("Bye!");
+            case GREETING_NUMBER -> Cli.greeting();
+            case EVEN_GAME_NUMBER -> EvenGame.even();
+            case CALC_GAME_NUMBER -> CalcGame.calc();
+            case GCD_GAME_NUMBER -> GCDGame.gcd();
+            case PROGRESSION_GAME_NUMBER -> ProgressionGame.progression();
+            case PRIME_GAME_NUMBER -> PrimeGame.prime();
+            case EXIT_NUMBER -> System.out.println("Bye!");
             default -> System.out.println("Invalid game number. Please restart the app.");
         }
     }
