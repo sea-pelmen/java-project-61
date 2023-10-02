@@ -7,6 +7,9 @@ import java.util.Arrays;
 public class ProgressionGame {
     static final int QUESTION_COUNT = 3;
     static final int NUMBER_MAX = 100;
+    static final int MIN = 5;
+    static final int MAX = 10;
+
     public static void progression() {
         String gameRules = "What number is missing in the progression?";
 
@@ -14,9 +17,7 @@ public class ProgressionGame {
         String[] answers = new String[QUESTION_COUNT];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int min = 5;
-            int max = 10;
-            int randomNum = min + (int) (Math.random() * ((max - min) + 1));
+            int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
             String[] progressionNumbers = new String[randomNum];
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
 
