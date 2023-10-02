@@ -20,7 +20,7 @@ public class Engine {
                 System.out.println("'" + usersAnswer
                         + "' is wrong answer ;(. Correct answer was '"
                         + answers[correctUsersAnswers] + "'.");
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
             if (correctUsersAnswers == 2) {
