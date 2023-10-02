@@ -20,7 +20,11 @@ public class PrimeGame {
             }
 
             String correctAnswer = null;
-            for (int i = 2; i < primeGameNumber; i++) {
+            for (int i = 2; i <= primeGameNumber; i++) {
+                if (i == primeGameNumber) {
+                    correctAnswer = "yes";
+                    break;
+                }
                 correctAnswer = (primeGameNumber % i == 0) ? "no" : "yes";
                 if (correctAnswer.equals("no")) {
                     break;
