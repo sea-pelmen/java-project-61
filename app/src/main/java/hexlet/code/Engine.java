@@ -4,10 +4,14 @@ import java.util.Scanner;
 
 public class Engine {
     public static void gamesLogic(String gameRules, String[] questions, String[] answers) {
-        String userName = Cli.greeting();
-        System.out.println(gameRules);
-
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+
+        System.out.println(gameRules);
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             System.out.println("Question: " + questions[correctUsersAnswers]);
