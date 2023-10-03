@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class CalcGame {
     static final int QUESTION_COUNT = 3;
     static final int NUMBER_MAX = 100;
-    public static void calc() {
+    public static void startGame() {
         String gameRules = "What is the result of the expression?";
 
         String[] questions = new String[QUESTION_COUNT];

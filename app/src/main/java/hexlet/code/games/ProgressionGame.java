@@ -10,7 +10,7 @@ public class ProgressionGame {
     static final int MIN = 5;
     static final int MAX = 10;
 
-    public static void progression() {
+    public static void startGame() {
         String gameRules = "What number is missing in the progression?";
 
         String[] questions = new String[QUESTION_COUNT];

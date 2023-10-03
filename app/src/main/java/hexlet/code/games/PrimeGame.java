@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class PrimeGame {
     static final int QUESTION_COUNT = 3;
     static final int NUMBER_MAX = 100;
-    public static void prime() {
+    public static void startGame() {
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         String[] questions = new String[QUESTION_COUNT];

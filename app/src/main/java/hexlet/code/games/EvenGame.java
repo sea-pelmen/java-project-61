@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class EvenGame {
     static final int QUESTION_COUNT = 3;
     static final int NUMBER_MAX = 100;
-    public static void even() {
+    public static void startGame() {
         String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         String[] questions = new String[QUESTION_COUNT];

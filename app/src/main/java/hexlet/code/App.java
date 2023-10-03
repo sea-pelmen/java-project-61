@@ -33,11 +33,11 @@ public class App {
 
         switch (usersChoice) {
             case GREETING_NUMBER -> Cli.greeting();
-            case EVEN_GAME_NUMBER -> EvenGame.even();
-            case CALC_GAME_NUMBER -> CalcGame.calc();
-            case GCD_GAME_NUMBER -> GCDGame.gcd();
-            case PROGRESSION_GAME_NUMBER -> ProgressionGame.progression();
-            case PRIME_GAME_NUMBER -> PrimeGame.prime();
+            case EVEN_GAME_NUMBER -> EvenGame.startGame();
+            case CALC_GAME_NUMBER -> CalcGame.startGame();
+            case GCD_GAME_NUMBER -> GCDGame.startGame();
+            case PROGRESSION_GAME_NUMBER -> ProgressionGame.startGame();
+            case PRIME_GAME_NUMBER -> PrimeGame.startGame();
             case EXIT_NUMBER -> System.out.println("Bye!");
             default -> System.out.println("Invalid game number. Please restart the app.");
         }
