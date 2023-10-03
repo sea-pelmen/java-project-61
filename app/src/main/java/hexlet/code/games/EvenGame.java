@@ -8,16 +8,15 @@ public class EvenGame {
     public static void startGame() {
         String gameRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[] questions = new String[QUESTION_COUNT];
-        String[] answers = new String[QUESTION_COUNT];
+        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             String evenGameNumber = String.valueOf((int) (Math.random() * NUMBER_MAX));
             String correctAnswer = (Integer.parseInt(evenGameNumber) % 2 == 0) ? "yes" : "no";
-            questions[correctUsersAnswers] = evenGameNumber;
-            answers[correctUsersAnswers] = correctAnswer;
+            questionsAndAnswers[correctUsersAnswers][0] = evenGameNumber;
+            questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
 
-        Engine.gamesLogic(gameRules, questions, answers);
+        Engine.gamesLogic(gameRules, questionsAndAnswers);
     }
 }

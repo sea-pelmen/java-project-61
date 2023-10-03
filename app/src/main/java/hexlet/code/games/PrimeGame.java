@@ -8,8 +8,7 @@ public class PrimeGame {
     public static void startGame() {
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] questions = new String[QUESTION_COUNT];
-        String[] answers = new String[QUESTION_COUNT];
+        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             int primeGameNumber = (int) (Math.random() * NUMBER_MAX);
@@ -29,9 +28,9 @@ public class PrimeGame {
                     break;
                 }
             }
-            questions[correctUsersAnswers] = String.valueOf(primeGameNumber);
-            answers[correctUsersAnswers] = correctAnswer;
+            questionsAndAnswers[correctUsersAnswers][0] = String.valueOf(primeGameNumber);
+            questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
-        Engine.gamesLogic(gameRules, questions, answers);
+        Engine.gamesLogic(gameRules, questionsAndAnswers);
     }
 }

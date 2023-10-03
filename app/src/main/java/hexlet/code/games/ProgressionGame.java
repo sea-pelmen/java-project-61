@@ -13,8 +13,7 @@ public class ProgressionGame {
     public static void startGame() {
         String gameRules = "What number is missing in the progression?";
 
-        String[] questions = new String[QUESTION_COUNT];
-        String[] answers = new String[QUESTION_COUNT];
+        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
@@ -34,9 +33,9 @@ public class ProgressionGame {
             progressionNumbers[randomQuestionIndex] = "..";
             String progressionQuestion = Arrays.toString(progressionNumbers);
             progressionQuestion = progressionQuestion.replace("[", "").replace("]", "").replace(",", "");
-            questions[correctUsersAnswers] = progressionQuestion;
-            answers[correctUsersAnswers] = correctAnswer;
+            questionsAndAnswers[correctUsersAnswers][0] = progressionQuestion;
+            questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
-        Engine.gamesLogic(gameRules, questions, answers);
+        Engine.gamesLogic(gameRules, questionsAndAnswers);
     }
 }

@@ -8,8 +8,7 @@ public class CalcGame {
     public static void startGame() {
         String gameRules = "What is the result of the expression?";
 
-        String[] questions = new String[QUESTION_COUNT];
-        String[] answers = new String[QUESTION_COUNT];
+        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             char[] operations = {'+', '-', '*'};
@@ -34,9 +33,9 @@ public class CalcGame {
                 default:
                     correctAnswer = 0;
             }
-            questions[correctUsersAnswers] = calcGameExpression;
-            answers[correctUsersAnswers] = String.valueOf(correctAnswer);
+            questionsAndAnswers[correctUsersAnswers][0] = calcGameExpression;
+            questionsAndAnswers[correctUsersAnswers][1] = String.valueOf(correctAnswer);
         }
-        Engine.gamesLogic(gameRules, questions, answers);
+        Engine.gamesLogic(gameRules, questionsAndAnswers);
     }
 }

@@ -8,8 +8,7 @@ public class GCDGame {
     public static void startGame() {
         String gameRules = "Find the greatest common divisor of given numbers.";
 
-        String[] questions = new String[QUESTION_COUNT];
-        String[] answers = new String[QUESTION_COUNT];
+        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
 
         for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
             int gcdNumber1 = (int) (Math.random() * NUMBER_MAX);
@@ -22,9 +21,9 @@ public class GCDGame {
                     gcdMax = i;
                 }
             }
-            questions[correctUsersAnswers] = gcdGameNumbers;
-            answers[correctUsersAnswers] = String.valueOf(gcdMax);
+            questionsAndAnswers[correctUsersAnswers][0] = gcdGameNumbers;
+            questionsAndAnswers[correctUsersAnswers][1] = String.valueOf(gcdMax);
         }
-        Engine.gamesLogic(gameRules, questions, answers);
+        Engine.gamesLogic(gameRules, questionsAndAnswers);
     }
 }
