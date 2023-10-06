@@ -28,6 +28,9 @@ public class PrimeGame {
 
     private static String isPrime(int primeGameNumber) {
         String correctAnswer = null;
+        if (primeGameNumber == 1) {
+            return "yes";
+        }
         for (int i = 2; i <= primeGameNumber; i++) {
             if (i == primeGameNumber) {
                 correctAnswer = "yes";
