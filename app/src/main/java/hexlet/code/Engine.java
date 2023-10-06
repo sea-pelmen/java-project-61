@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    static final int COUNT_ROUNDS = 3;
+    public static final int COUNT_ROUNDS = 3;
     public static void runGame(String gameRules, String[][] questionsAndAnswers) {
         Scanner scanner = new Scanner(System.in);
 

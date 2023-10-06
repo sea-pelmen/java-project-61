@@ -1,28 +1,30 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Arrays;
 
+import static hexlet.code.Engine.COUNT_ROUNDS;
+import static hexlet.code.Utils.calcRandomNumber;
+
 public class ProgressionGame {
-    static final int QUESTION_COUNT = 3;
-    static final int NUMBER_MAX = 100;
     static final int MIN = 5;
     static final int MAX = 10;
 
     public static void startGame() {
         String gameRules = "What number is missing in the progression?";
 
-        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
+        String[][] questionsAndAnswers = Utils.createMassive();
 
-        for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
+        for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
             int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
             String[] progressionNumbers = new String[randomNum];
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
 
-            progressionNumbers[0] = String.valueOf((int) (Math.random() * NUMBER_MAX));
+            progressionNumbers[0] = String.valueOf(calcRandomNumber());
 
-            int randomD = (int) (Math.random() * NUMBER_MAX);
+            int randomD = calcRandomNumber();
 
             for (int i = 1; i < progressionNumbers.length; i++) {
                 progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));

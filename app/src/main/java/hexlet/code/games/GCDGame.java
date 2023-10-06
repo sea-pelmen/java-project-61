@@ -1,18 +1,20 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
+import static hexlet.code.Engine.COUNT_ROUNDS;
+import static hexlet.code.Utils.calcRandomNumber;
 
 public class GCDGame {
-    static final int QUESTION_COUNT = 3;
-    static final int NUMBER_MAX = 100;
     public static void startGame() {
         String gameRules = "Find the greatest common divisor of given numbers.";
 
-        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
+        String[][] questionsAndAnswers = Utils.createMassive();
 
-        for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int gcdNumber1 = (int) (Math.random() * NUMBER_MAX);
-            int gcdNumber2 = (int) (Math.random() * NUMBER_MAX);
+        for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
+            int gcdNumber1 = calcRandomNumber();
+            int gcdNumber2 = calcRandomNumber();
             String gcdGameNumbers = gcdNumber1 + " " + gcdNumber2;
 
             int gcdMax = 0;

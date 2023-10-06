@@ -1,20 +1,22 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
+import static hexlet.code.Engine.COUNT_ROUNDS;
+import static hexlet.code.Utils.calcRandomNumber;
 
 public class PrimeGame {
-    static final int QUESTION_COUNT = 3;
-    static final int NUMBER_MAX = 100;
     public static void startGame() {
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[][] questionsAndAnswers = new String[QUESTION_COUNT][2];
+        String[][] questionsAndAnswers = Utils.createMassive();
 
-        for (var correctUsersAnswers = 0; correctUsersAnswers <= 2; correctUsersAnswers++) {
-            int primeGameNumber = (int) (Math.random() * NUMBER_MAX);
+        for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
+            int primeGameNumber = calcRandomNumber();
 
             while (primeGameNumber < 1) {
-                primeGameNumber = (int) (Math.random() * NUMBER_MAX);
+                primeGameNumber = calcRandomNumber();
             }
 
             String correctAnswer = null;
