@@ -18,18 +18,9 @@ public class ProgressionGame {
         String[][] questionsAndAnswers = Utils.createMassive();
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
-            int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
-            String[] progressionNumbers = new String[randomNum];
+            String[] progressionNumbers = createProgression();
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
-
-            progressionNumbers[0] = String.valueOf(calcRandomNumber());
-
-            int randomD = calcRandomNumber();
-
-            for (int i = 1; i < progressionNumbers.length; i++) {
-                progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));
-            }
-
+            int randomD = Integer.parseInt(progressionNumbers[1]) - Integer.parseInt(progressionNumbers[0]);
             String correctAnswer =
                     String.valueOf(Integer.parseInt(progressionNumbers[randomQuestionIndex + 1]) - randomD);
             progressionNumbers[randomQuestionIndex] = "..";
@@ -39,5 +30,18 @@ public class ProgressionGame {
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
         Engine.runGame(gameRules, questionsAndAnswers);
+    }
+
+    private static String[] createProgression() {
+        int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
+        String[] progressionNumbers = new String[randomNum];
+        progressionNumbers[0] = String.valueOf(calcRandomNumber());
+
+        int randomD = calcRandomNumber();
+
+        for (int i = 1; i < progressionNumbers.length; i++) {
+            progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));
+        }
+        return progressionNumbers;
     }
 }
