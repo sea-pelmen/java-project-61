@@ -27,7 +27,7 @@ public class CalcGame {
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    public static int calculate(char randomOperator, int calcGameNumber1, int calcGameNumber2) {
+    private static int calculate(char randomOperator, int calcGameNumber1, int calcGameNumber2) {
         int correctAnswer = 0;
 
         switch (randomOperator) {

@@ -15,11 +15,14 @@ public class EvenGame {
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
             String evenGameNumber = String.valueOf(calcRandomNumber());
-            String correctAnswer = (Integer.parseInt(evenGameNumber) % 2 == 0) ? "yes" : "no";
+            String correctAnswer = isEven(evenGameNumber);
             questionsAndAnswers[correctUsersAnswers][0] = evenGameNumber;
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
-
         Engine.runGame(gameRules, questionsAndAnswers);
+    }
+
+    private static String isEven(String evenGameNumber) {
+        return (Integer.parseInt(evenGameNumber) % 2 == 0) ? "yes" : "no";
     }
 }

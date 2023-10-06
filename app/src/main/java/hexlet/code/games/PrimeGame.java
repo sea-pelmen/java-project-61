@@ -19,20 +19,25 @@ public class PrimeGame {
                 primeGameNumber = calcRandomNumber();
             }
 
-            String correctAnswer = null;
-            for (int i = 2; i <= primeGameNumber; i++) {
-                if (i == primeGameNumber) {
-                    correctAnswer = "yes";
-                    break;
-                }
-                correctAnswer = (primeGameNumber % i == 0) ? "no" : "yes";
-                if (correctAnswer.equals("no")) {
-                    break;
-                }
-            }
+            String correctAnswer = isPrime(primeGameNumber);
             questionsAndAnswers[correctUsersAnswers][0] = String.valueOf(primeGameNumber);
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
         Engine.runGame(gameRules, questionsAndAnswers);
+    }
+
+    private static String isPrime(int primeGameNumber) {
+        String correctAnswer = null;
+        for (int i = 2; i <= primeGameNumber; i++) {
+            if (i == primeGameNumber) {
+                correctAnswer = "yes";
+                break;
+            }
+            correctAnswer = (primeGameNumber % i == 0) ? "no" : "yes";
+            if (correctAnswer.equals("no")) {
+                break;
+            }
+        }
+        return correctAnswer;
     }
 }
