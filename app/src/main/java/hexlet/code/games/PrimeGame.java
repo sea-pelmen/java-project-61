@@ -31,6 +31,6 @@ public class PrimeGame {
             questionsAndAnswers[correctUsersAnswers][0] = String.valueOf(primeGameNumber);
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
-        Engine.gamesLogic(gameRules, questionsAndAnswers);
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
 }

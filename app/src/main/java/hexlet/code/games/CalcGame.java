@@ -36,6 +36,6 @@ public class CalcGame {
             questionsAndAnswers[correctUsersAnswers][0] = calcGameExpression;
             questionsAndAnswers[correctUsersAnswers][1] = String.valueOf(correctAnswer);
         }
-        Engine.gamesLogic(gameRules, questionsAndAnswers);
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
 }

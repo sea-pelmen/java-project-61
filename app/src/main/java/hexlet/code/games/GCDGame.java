@@ -24,6 +24,6 @@ public class GCDGame {
             questionsAndAnswers[correctUsersAnswers][0] = gcdGameNumbers;
             questionsAndAnswers[correctUsersAnswers][1] = String.valueOf(gcdMax);
         }
-        Engine.gamesLogic(gameRules, questionsAndAnswers);
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
 }

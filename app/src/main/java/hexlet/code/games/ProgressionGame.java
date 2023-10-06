@@ -36,6 +36,6 @@ public class ProgressionGame {
             questionsAndAnswers[correctUsersAnswers][0] = progressionQuestion;
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
-        Engine.gamesLogic(gameRules, questionsAndAnswers);
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
 }

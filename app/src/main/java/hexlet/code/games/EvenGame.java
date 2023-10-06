@@ -17,6 +17,6 @@ public class EvenGame {
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
 
-        Engine.gamesLogic(gameRules, questionsAndAnswers);
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
 }
