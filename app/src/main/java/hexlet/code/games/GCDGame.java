@@ -26,6 +26,9 @@ public class GCDGame {
 
     private static int findGCD(int gcdNumber1, int gcdNumber2) {
         int gcdMax = 0;
+        if (gcdNumber1 == 0 || gcdNumber2 == 0) {
+            return Math.max(gcdNumber1, gcdNumber2);
+        }
         for (int i = 1; i <= gcdNumber1 && i <= gcdNumber2; i++) {
             if (gcdNumber1 % i == 0 && gcdNumber2 % i == 0) {
                 gcdMax = i;
