@@ -4,7 +4,6 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.COUNT_ROUNDS;
-import static hexlet.code.Utils.generateRandomNumber;
 
 public class PrimeGame {
     public static void startGame() {
