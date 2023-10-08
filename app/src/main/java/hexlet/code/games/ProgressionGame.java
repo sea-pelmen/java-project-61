@@ -36,7 +36,9 @@ public class ProgressionGame {
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static String[] createProgression(int progressionLength, String progressionFirstNumber, int progressionStep) {
+    private static String[] createProgression(int progressionLength,
+                                              String progressionFirstNumber,
+                                              int progressionStep) {
         String[] progressionNumbers = new String[progressionLength];
         progressionNumbers[0] = progressionFirstNumber;
 
