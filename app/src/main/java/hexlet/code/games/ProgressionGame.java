@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 import java.util.Arrays;
 
 import static hexlet.code.Engine.COUNT_ROUNDS;
-import static hexlet.code.Utils.calcRandomNumber;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class ProgressionGame {
     static final int MIN = 5;
@@ -18,7 +18,11 @@ public class ProgressionGame {
         String[][] questionsAndAnswers = Utils.createMassive();
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
-            String[] progressionNumbers = createProgression();
+            int progressionLength = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
+            String progressionFirstNumber = String.valueOf(generateRandomNumber());
+            int progressionStep = Utils.generateRandomNumber();
+            String[] progressionNumbers = createProgression(progressionLength, progressionFirstNumber, progressionStep);
+
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
             int randomD = Integer.parseInt(progressionNumbers[1]) - Integer.parseInt(progressionNumbers[0]);
             String correctAnswer =
@@ -32,15 +36,12 @@ public class ProgressionGame {
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static String[] createProgression() {
-        int randomNum = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
-        String[] progressionNumbers = new String[randomNum];
-        progressionNumbers[0] = String.valueOf(calcRandomNumber());
-
-        int randomD = calcRandomNumber();
+    private static String[] createProgression(int progressionLength, String progressionFirstNumber, int progressionStep) {
+        String[] progressionNumbers = new String[progressionLength];
+        progressionNumbers[0] = progressionFirstNumber;
 
         for (int i = 1; i < progressionNumbers.length; i++) {
-            progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + randomD));
+            progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + progressionStep));
         }
         return progressionNumbers;
     }

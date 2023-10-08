@@ -31,9 +31,9 @@ public class Engine {
                 break;
             }
         }
-        if (correctUsersAnswers == COUNT_ROUNDS) {
+
             System.out.println("Congratulations, " + userName + "!");
-        }
+
         scanner.close();
     }
 }

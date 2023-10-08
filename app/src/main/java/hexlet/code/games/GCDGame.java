@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.COUNT_ROUNDS;
-import static hexlet.code.Utils.calcRandomNumber;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class GCDGame {
     public static void startGame() {
@@ -13,8 +13,8 @@ public class GCDGame {
         String[][] questionsAndAnswers = Utils.createMassive();
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
-            int gcdNumber1 = calcRandomNumber();
-            int gcdNumber2 = calcRandomNumber();
+            int gcdNumber1 = Utils.generateRandomNumber();
+            int gcdNumber2 = Utils.generateRandomNumber();
             String gcdGameNumbers = gcdNumber1 + " " + gcdNumber2;
 
             int gcdMax = findGCD(gcdNumber1, gcdNumber2);

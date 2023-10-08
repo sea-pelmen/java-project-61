@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.COUNT_ROUNDS;
-import static hexlet.code.Utils.calcRandomNumber;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class CalcGame {
     static final char[] OPERATIONS = {'+', '-', '*'};
@@ -17,8 +17,8 @@ public class CalcGame {
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
             int randomOperationIndex = (int) (Math.random() * OPERATIONS.length);
             char randomOperator = OPERATIONS[randomOperationIndex];
-            int calcGameNumber1 = calcRandomNumber();
-            int calcGameNumber2 = calcRandomNumber();
+            int calcGameNumber1 = Utils.generateRandomNumber();
+            int calcGameNumber2 = Utils.generateRandomNumber();
             String calcGameExpression = calcGameNumber1 + " " + randomOperator + " " + calcGameNumber2;
             int correctAnswer = calculate(randomOperator, calcGameNumber1, calcGameNumber2);
             questionsAndAnswers[correctUsersAnswers][0] = calcGameExpression;

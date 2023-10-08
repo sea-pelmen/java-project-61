@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import static hexlet.code.Engine.COUNT_ROUNDS;
-import static hexlet.code.Utils.calcRandomNumber;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class EvenGame {
 
@@ -14,15 +14,15 @@ public class EvenGame {
         String[][] questionsAndAnswers = Utils.createMassive();
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
-            String evenGameNumber = String.valueOf(calcRandomNumber());
-            String correctAnswer = isEven(evenGameNumber);
+            String evenGameNumber = String.valueOf(Utils.generateRandomNumber());
+            String correctAnswer = isEven(evenGameNumber) ? "yes" : "no";
             questionsAndAnswers[correctUsersAnswers][0] = evenGameNumber;
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static String isEven(String evenGameNumber) {
-        return (Integer.parseInt(evenGameNumber) % 2 == 0) ? "yes" : "no";
+    private static boolean isEven(String evenGameNumber) {
+        return Integer.parseInt(evenGameNumber) % 2 == 0;
     }
 }
