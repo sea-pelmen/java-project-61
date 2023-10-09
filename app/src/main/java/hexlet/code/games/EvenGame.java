@@ -13,15 +13,15 @@ public class EvenGame {
         String[][] questionsAndAnswers = Utils.createMassive();
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
-            String evenGameNumber = String.valueOf(Utils.generateRandomNumber());
+            int evenGameNumber = Utils.generateRandomNumber();
             String correctAnswer = isEven(evenGameNumber) ? "yes" : "no";
-            questionsAndAnswers[correctUsersAnswers][0] = evenGameNumber;
+            questionsAndAnswers[correctUsersAnswers][0] = String.valueOf(evenGameNumber);
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static boolean isEven(String evenGameNumber) {
-        return Integer.parseInt(evenGameNumber) % 2 == 0;
+    private static boolean isEven(int evenGameNumber) {
+        return evenGameNumber % 2 == 0;
     }
 }
