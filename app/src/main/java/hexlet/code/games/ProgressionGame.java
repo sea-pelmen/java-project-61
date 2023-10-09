@@ -44,9 +44,7 @@ public class ProgressionGame {
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static int[] createProgression(int progressionLength,
-                                              int progressionFirstNumber,
-                                              int progressionStep) {
+    private static int[] createProgression(int progressionLength, int progressionFirstNumber, int progressionStep) {
         int[] progressionNumbers = new int[progressionLength];
         progressionNumbers[0] = progressionFirstNumber;
 
