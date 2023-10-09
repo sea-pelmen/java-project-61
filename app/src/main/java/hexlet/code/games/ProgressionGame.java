@@ -19,31 +19,34 @@ public class ProgressionGame {
 
         for (var correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
             int progressionLength = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
-            String progressionFirstNumber = String.valueOf(generateRandomNumber());
+            int progressionFirstNumber = generateRandomNumber();
             int progressionStep = Utils.generateRandomNumber();
-            String[] progressionNumbers = createProgression(progressionLength, progressionFirstNumber, progressionStep);
+            int[] progressionNumbers = createProgression(progressionLength, progressionFirstNumber, progressionStep);
 
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
-            int randomD = Integer.parseInt(progressionNumbers[1]) - Integer.parseInt(progressionNumbers[0]);
+            int randomD = progressionNumbers[1] - progressionNumbers[0];
             String correctAnswer =
-                    String.valueOf(Integer.parseInt(progressionNumbers[randomQuestionIndex + 1]) - randomD);
-            progressionNumbers[randomQuestionIndex] = "..";
+                    String.valueOf(progressionNumbers[randomQuestionIndex + 1] - randomD);
             String progressionQuestion = Arrays.toString(progressionNumbers);
-            progressionQuestion = progressionQuestion.replace("[", "").replace("]", "").replace(",", "");
+            progressionQuestion = progressionQuestion.replace("[", "")
+                    .replace("]", "")
+                    .replace(",", "")
+                    .replace(correctAnswer, "..");
             questionsAndAnswers[correctUsersAnswers][0] = progressionQuestion;
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
         Engine.runGame(gameRules, questionsAndAnswers);
     }
 
-    private static String[] createProgression(int progressionLength,
-                                              String progressionFirstNumber,
-                                              int progressionStep) {
-        String[] progressionNumbers = new String[progressionLength];
+    private static int[] createProgression(int progressionLength,
+                                       int progressionFirstNumber,
+                                      int progressionStep) {
+
+        int[] progressionNumbers = new int[progressionLength];
         progressionNumbers[0] = progressionFirstNumber;
 
         for (int i = 1; i < progressionNumbers.length; i++) {
-            progressionNumbers[i] = String.valueOf((Integer.parseInt(progressionNumbers[i - 1]) + progressionStep));
+            progressionNumbers[i] = progressionNumbers[i - 1] + progressionStep;
         }
         return progressionNumbers;
     }
