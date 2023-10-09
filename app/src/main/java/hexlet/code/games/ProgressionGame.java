@@ -23,15 +23,21 @@ public class ProgressionGame {
             int progressionStep = Utils.generateRandomNumber();
             int[] progressionNumbers = createProgression(progressionLength, progressionFirstNumber, progressionStep);
 
+            String[] progressionQuestionMassive = new String[progressionLength];
+
+            for (int i = 0; i < progressionQuestionMassive.length; i++) {
+                progressionQuestionMassive[i] = String.valueOf(progressionNumbers[i]);
+            }
+
             int randomQuestionIndex = (int) (Math.random() * progressionNumbers.length - 1);
             int randomD = progressionNumbers[1] - progressionNumbers[0];
             String correctAnswer =
                     String.valueOf(progressionNumbers[randomQuestionIndex + 1] - randomD);
-            String progressionQuestion = Arrays.toString(progressionNumbers);
+            progressionQuestionMassive[randomQuestionIndex] = "..";
+            String progressionQuestion = Arrays.toString(progressionQuestionMassive);
             progressionQuestion = progressionQuestion.replace("[", "")
                     .replace("]", "")
-                    .replace(",", "")
-                    .replace(correctAnswer, "..");
+                    .replace(",", "");
             questionsAndAnswers[correctUsersAnswers][0] = progressionQuestion;
             questionsAndAnswers[correctUsersAnswers][1] = correctAnswer;
         }
@@ -39,9 +45,8 @@ public class ProgressionGame {
     }
 
     private static int[] createProgression(int progressionLength,
-                                       int progressionFirstNumber,
-                                      int progressionStep) {
-
+                                              int progressionFirstNumber,
+                                              int progressionStep) {
         int[] progressionNumbers = new int[progressionLength];
         progressionNumbers[0] = progressionFirstNumber;
 
