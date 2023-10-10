@@ -28,13 +28,11 @@ public class Engine {
                         + "' is wrong answer ;(. Correct answer was '"
                         + questionsAndAnswers[correctUsersAnswers][1] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
         }
 
-        if (correctUsersAnswers == COUNT_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!");
-        }
         scanner.close();
     }
 }
