@@ -1,12 +1,14 @@
 package hexlet.code;
 
+import static hexlet.code.Engine.COUNT_ROUNDS;
+
 public class Utils {
     static final int NUMBER_MAX = 100;
-    static final int QUESTION_COUNT = 3;
+
     public static int generateRandomNumber() {
         return (int) (Math.random() * NUMBER_MAX);
     }
     public static String[][] createMassive() {
-        return new String[QUESTION_COUNT][2];
+        return new String[COUNT_ROUNDS][2];
     }
 }

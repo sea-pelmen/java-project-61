@@ -14,9 +14,8 @@ public class Engine {
 
         System.out.println(gameRules);
 
-        int correctUsersAnswers;
+        for (int correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
 
-        for (correctUsersAnswers = 0; correctUsersAnswers < COUNT_ROUNDS; correctUsersAnswers++) {
             System.out.println("Question: " + questionsAndAnswers[correctUsersAnswers][0]);
             System.out.print("Your answer: ");
 
